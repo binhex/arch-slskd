@@ -15,6 +15,11 @@ else
 	remote_file_management=""
 fi
 
+# create paths
+mkdir -p \
+"${INCOMPLETE_PATH}" \
+"${DOWNLOADS_PATH}"
+
 # run app
 "${install_path}/slskd" \
 --slsk-username "${SLSK_USERNAME}" \
