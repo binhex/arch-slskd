@@ -1,6 +1,7 @@
 #!/usr/bin/dumb-init /bin/bash
 
 install_path="/opt/slskd"
+config_path="/config/slskd"
 
 # set boolean flags
 if [[ "${REMOTE_CONFIGURATION}" == 'true' ]]; then
@@ -18,7 +19,8 @@ fi
 # create paths
 mkdir -p \
 "${INCOMPLETE_PATH}" \
-"${DOWNLOADS_PATH}"
+"${DOWNLOADS_PATH}" \
+"${config_path}"
 
 # run app
 "${install_path}/slskd" \
@@ -32,5 +34,6 @@ mkdir -p \
 --password "${WEBUI_PASSWORD}" \
 --http-port "${WEBUI_HTTP_PORT}" \
 --https-port "${WEBUI_HTTPS_PORT}" \
+--app-dir "${config_path}" \
 ${remote_configuration} \
 ${remote_file_management}
