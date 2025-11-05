@@ -39,10 +39,18 @@ refresh.sh
 # github
 ####
 
+# construct asset glob based on target architecture
+if [[ "${TARGETARCH}" == "arm64" ]]; then
+	asset_glob='slskd-*-linux-arm64.zip'
+else
+	asset_glob='slskd-*-linux-x64.zip'
+fi
+
 download_path="/tmp/slskd"
 install_path="/opt/slskd"
 
-gh.sh --github-owner slskd --github-repo slskd --download-type release --release-type binary --download-path "${download_path}" --asset-glob 'slskd-*-linux-x64.zip'
+gh.sh --github-owner slskd --github-repo slskd --download-type release --release-type binary --download-path "${download_path}" --asset-glob "${asset_glob}"
+
 
 # unzip to install path
 unzip -o "${download_path}/slskd-"*"-linux-x64.zip" -d "${install_path}"
