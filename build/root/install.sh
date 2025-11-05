@@ -51,9 +51,8 @@ install_path="/opt/slskd"
 
 gh.sh --github-owner slskd --github-repo slskd --download-type release --release-type binary --download-path "${download_path}" --asset-glob "${asset_glob}"
 
-
 # unzip to install path
-unzip -o "${download_path}/slskd-"*"-linux-x64.zip" -d "${install_path}"
+unzip -o "${download_path}/"${asset_glob} -d "${install_path}"
 
 # container perms
 ####
