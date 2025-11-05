@@ -22,11 +22,13 @@ mkdir -p \
 "${DOWNLOADS_PATH}" \
 "${config_path}"
 
+# use env var as cli --shared argument does not support multiple paths
+export SLSKD_SHARED_DIR="${SHARED_PATHS}"
+
 # run app
 "${install_path}/slskd" \
 --slsk-username "${SLSK_USERNAME}" \
 --slsk-password "${SLSK_PASSWORD}" \
---shared "${SHARED_PATHS}" \
 --slsk-listen-port "${SLSK_LISTEN_PORT}" \
 --incomplete "${INCOMPLETE_PATH}" \
 --downloads "${DOWNLOADS_PATH}" \
@@ -35,5 +37,7 @@ mkdir -p \
 --http-port "${WEBUI_HTTP_PORT}" \
 --https-port "${WEBUI_HTTPS_PORT}" \
 --app-dir "${config_path}" \
+--upload-speed-limit "${UPLOAD_SPEED_LIMIT}" \
+--download-speed-limit "${DOWNLOAD_SPEED_LIMIT}" \
 ${remote_configuration} \
 ${remote_file_management}
