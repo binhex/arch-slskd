@@ -21,12 +21,20 @@ docker run -d \
     -v <path for media files>:/media \
     -v <path for data files>:/data \
     -v /etc/localtime:/etc/localtime:ro \
+    -e SLSK_USERNAME=<username> \
+    -e SLSK_PASSWORD=<password> \
+    -e SLSK_LISTEN_PORT=<port> \
+    -e SHARED_PATHS=<paths> \
+    -e INCOMPLETE_PATH=<path> \
+    -e DOWNLOADS_PATH=<path> \
     -e WEBUI_HTTP_PORT=<port> \
     -e WEBUI_HTTPS_PORT=<port> \
     -e WEBUI_USERNAME=<username> \
     -e WEBUI_PASSWORD=<password> \
     -e UPLOAD_SPEED_LIMIT=<int32> \
     -e DOWNLOAD_SPEED_LIMIT=<int32> \
+    -e REMOTE_CONFIGURATION=<true|false> \
+    -e REMOTE_FILE_MANAGEMENT=<true|false> \
     -e GLUETUN_INCOMING_PORT=<yes|no> \
     -e HEALTHCHECK_COMMAND=<command> \
     -e HEALTHCHECK_ACTION=<action> \
@@ -55,8 +63,8 @@ docker run -d \
     -v /home/nobody/media:/media \
     -v /home/nobody/data:/data \
     -v /etc/localtime:/etc/localtime:ro \
-    -e WEBUI_USERNAME=slskd \
-    -e WEBUI_PASSWORD=slskd \
+    -e SLSK_USERNAME=mysoulseekusername \
+    -e SLSK_PASSWORD=mysoulseekpassword \
     -e UMASK=000 \
     -e PUID=99 \
     -e PGID=100 \
