@@ -28,7 +28,9 @@ function slskd(){
 	"${config_path}"
 
 	# use env var as cli --shared argument does not support multiple paths
-	export SLSKD_SHARED_DIR="${SHARED_PATHS}"
+	if [[ -n "${SHARED_PATHS}" ]]; then
+		export SLSKD_SHARED_DIR="${SHARED_PATHS}"
+	fi
 
 	# run portset and pass app parameters
 	portset.sh \
