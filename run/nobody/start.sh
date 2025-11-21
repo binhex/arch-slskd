@@ -34,23 +34,27 @@ function slskd(){
 
 	# run portset and pass app parameters
 	portset.sh \
-	--app-name "${APPNAME}" \
-	--webui-port "${WEBUI_HTTP_PORT}" \
-	--app-parameters "${install_path}/slskd" \
-	--slsk-username "${SLSK_USERNAME}" \
-	--slsk-password "${SLSK_PASSWORD}" \
-	--slsk-listen-port "${SLSK_LISTEN_PORT}" \
-	--incomplete "${INCOMPLETE_PATH}" \
-	--downloads "${DOWNLOADS_PATH}" \
-	--username "${WEBUI_USERNAME}" \
-	--password "${WEBUI_PASSWORD}" \
-	--http-port "${WEBUI_HTTP_PORT}" \
-	--https-port "${WEBUI_HTTPS_PORT}" \
-	--app-dir "${config_path}" \
-	--upload-speed-limit "${UPLOAD_SPEED_LIMIT}" \
-	--download-speed-limit "${DOWNLOAD_SPEED_LIMIT}" \
-	${remote_configuration} \
-	${remote_file_management}
+		--app-name "${APPNAME}" \
+		--webui-port "${WEBUI_HTTP_PORT}" \
+		--gluetun-incoming-port "${GLUETUN_INCOMING_PORT}" \
+		--gluetun-control-server-port "${GLUETUN_CONTROL_SERVER_PORT}" \
+		--gluetun-control-server-username "${GLUETUN_CONTROL_SERVER_USERNAME}" \
+		--gluetun-control-server-password "${GLUETUN_CONTROL_SERVER_PASSWORD}" \
+		--app-parameters "${install_path}/slskd" \
+		--slsk-username "${SLSK_USERNAME}" \
+		--slsk-password "${SLSK_PASSWORD}" \
+		--slsk-listen-port "${SLSK_LISTEN_PORT}" \
+		--incomplete "${INCOMPLETE_PATH}" \
+		--downloads "${DOWNLOADS_PATH}" \
+		--username "${WEBUI_USERNAME}" \
+		--password "${WEBUI_PASSWORD}" \
+		--http-port "${WEBUI_HTTP_PORT}" \
+		--https-port "${WEBUI_HTTPS_PORT}" \
+		--app-dir "${config_path}" \
+		--upload-speed-limit "${UPLOAD_SPEED_LIMIT}" \
+		--download-speed-limit "${DOWNLOAD_SPEED_LIMIT}" \
+		${remote_configuration} \
+		${remote_file_management}
 
 }
 

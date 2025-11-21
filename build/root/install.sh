@@ -120,6 +120,10 @@ source utils.sh
 # Define environment variables to process
 # Format: "VAR_NAME:DEFAULT_VALUE:REQUIRED:MASK"
 env_vars=(
+	"GLUETUN_CONTROL_SERVER_PORT:8000:false:false"
+	"GLUETUN_CONTROL_SERVER_USERNAME::false:false"
+	"GLUETUN_CONTROL_SERVER_PASSWORD::false:true"
+	"GLUETUN_INCOMING_PORT:no:false:false"
 	"SLSK_USERNAME::true:false"
 	"SLSK_PASSWORD::true:true"
 	"SLSK_LISTEN_PORT:50300:false:false"
