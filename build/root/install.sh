@@ -41,9 +41,9 @@ refresh.sh
 
 # construct asset glob based on target architecture
 if [[ "${TARGETARCH}" == "arm64" ]]; then
-	asset_glob='slskd-*-linux-arm64.zip'
+	asset_glob='slskd.*linux-arm64.zip'
 else
-	asset_glob='slskd-*-linux-x64.zip'
+	asset_glob='slskd.*linux-x64.zip'
 fi
 
 download_path="/tmp/slskd"
