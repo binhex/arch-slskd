@@ -50,6 +50,7 @@ function slskd(){
 		--password "${WEBUI_PASSWORD}" \
 		--http-port "${WEBUI_HTTP_PORT}" \
 		--https-port "${WEBUI_HTTPS_PORT}" \
+		--api-key "${API_KEY}" \
 		--app-dir "${config_path}" \
 		--upload-speed-limit "${UPLOAD_SPEED_LIMIT}" \
 		--download-speed-limit "${DOWNLOAD_SPEED_LIMIT}" \

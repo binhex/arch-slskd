@@ -118,6 +118,7 @@ env_vars=(
 	"WEBUI_HTTPS_PORT:8990:false:false"
 	"WEBUI_USERNAME:slskd:false:false"
 	"WEBUI_PASSWORD:slskd:false:true"
+	"API_KEY::false:true"
 	"REMOTE_CONFIGURATION:false:false:false"
 	"REMOTE_FILE_MANAGEMENT:false:false:false"
 )

@@ -31,6 +31,7 @@ docker run -d \
     -e WEBUI_HTTPS_PORT=<port> \
     -e WEBUI_USERNAME=<username> \
     -e WEBUI_PASSWORD=<password> \
+    -e API_KEY=<api key> \
     -e UPLOAD_SPEED_LIMIT=<int32> \
     -e DOWNLOAD_SPEED_LIMIT=<int32> \
     -e REMOTE_CONFIGURATION=<true|false> \
