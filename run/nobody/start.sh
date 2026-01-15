@@ -32,6 +32,13 @@ function slskd(){
 		export SLSKD_SHARED_DIR="${SHARED_PATHS}"
 	fi
 
+	# if api key is not defined then do not pass to slskd
+	if [[ -n "${API_KEY}" ]]; then
+		api_key="--api-key ${API_KEY}"
+	else
+		api_key=""
+	fi
+
 	# run portset and pass app parameters
 	portset.sh \
 		--app-name "${APPNAME}" \
@@ -50,10 +57,10 @@ function slskd(){
 		--password "${WEBUI_PASSWORD}" \
 		--http-port "${WEBUI_HTTP_PORT}" \
 		--https-port "${WEBUI_HTTPS_PORT}" \
-		--api-key "${API_KEY}" \
 		--app-dir "${config_path}" \
 		--upload-speed-limit "${UPLOAD_SPEED_LIMIT}" \
 		--download-speed-limit "${DOWNLOAD_SPEED_LIMIT}" \
+		${api_key} \
 		${remote_configuration} \
 		${remote_file_management}
 
