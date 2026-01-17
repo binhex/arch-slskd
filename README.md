@@ -81,7 +81,7 @@ for the user you want to run the container as:-
 id <username>
 ```
 
-API_KEY value must be between 16 and 255 charactes and can be any string you want, to generate a randomised string run `openssl rand -hex 16`.
+`API_KEY` value must be between 16 and 255 charactes and can be any string you want, to generate a randomised string run `openssl rand -hex 16`.
 
 ___
 If you appreciate my work, then please consider buying me a beer  :D
