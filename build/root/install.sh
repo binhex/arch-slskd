@@ -117,6 +117,8 @@ env_vars=(
 	"API_KEY::false:true"
 	"REMOTE_CONFIGURATION:false:false:false"
 	"REMOTE_FILE_MANAGEMENT:false:false:false"
+	"ENABLE_STARTUP_SCRIPTS:no:false:false"
+	"STARTUP_SCRIPTS_MODE:wait:false:false"
 )
 
 # Process each environment variable
